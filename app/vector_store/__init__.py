@@ -1,0 +1,1 @@
+# Vector store package for CareSync AI document embeddings

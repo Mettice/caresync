@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 190 100% 99%;
+    --foreground: 190 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 190 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 190 50% 10%;
+
+    --primary: 190 60% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 187 70% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 190 10% 95%;
+    --muted-foreground: 190 40% 40%;
+
+    --accent: 190 20% 90%;
+    --accent-foreground: 190 50% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 190 20% 90%;
+    --input: 190 20% 90%;
+    --ring: 190 60% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 190 50% 10%;
+    --foreground: 190 10% 95%;
+
+    --card: 190 50% 10%;
+    --card-foreground: 190 10% 95%;
+
+    --popover: 190 50% 10%;
+    --popover-foreground: 190 10% 95%;
+
+    --primary: 190 60% 50%;
+    --primary-foreground: 190 10% 5%;
+
+    --secondary: 187 70% 45%;
+    --secondary-foreground: 190 10% 5%;
+
+    --muted: 190 50% 20%;
+    --muted-foreground: 190 10% 70%;
+
+    --accent: 190 50% 20%;
+    --accent-foreground: 190 10% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 190 50% 20%;
+    --input: 190 50% 20%;
+    --ring: 190 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-caresync-primary to-caresync-dark;
+}
+
+.step-number {
+  @apply flex items-center justify-center w-8 h-8 rounded-full bg-caresync-primary text-white font-bold mr-2;
+}
+
+/* Global animations for blob effect and gradient */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-blob {
+  animation: blob 10s infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
